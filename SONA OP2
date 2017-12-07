@@ -1,4 +1,4 @@
-import java.util.Scanner; //import scanner util
+import java.util.Scanner;
 
 public class ReadSeconds {
 
@@ -17,16 +17,32 @@ public class ReadSeconds {
 
             hours = second / 3600;
             minutes = (second % 3600) / 60;
-            int temp = (second % 3600) % 60;
-            if (temp > 1) {
-                System.out.println("The time entered in hours,minutes and seconds is:");
-                System.out.println(hours + " hours, " + minutes + " minutes, " + temp + " seconds");
-            } else {
-                System.out.println("The time entered in hours,minutes and seconds is:");
-                System.out.println(hours + " hours, " + minutes + " minutes, " + temp + " second");
-            }
+            int mainsec = (second % 3600) % 60;
 
-            System.out.print("Enter the number of seconds : ");
+            if (hours > 1 && minutes > 1 ) {
+                System.out.println("The time entered in hours,minutes and seconds is:");
+                System.out.print(hours + " hours, ");
+            }
+            else if (hours == 1 && minutes == 1 ) {
+                System.out.println("The time entered in hours,minutes and seconds is:");
+                System.out.print(hours + " hour ");
+            }
+            if (minutes > 1 ) {
+                System.out.print(minutes + " minutes, ");
+            }
+            else if (minutes == 1) {
+                System.out.print(minutes + " minute, ");
+            }
+                if (mainsec > 1) {
+                    System.out.println(mainsec + " seconds");
+                }
+                else if (mainsec == 1) {
+                    System.out.println(mainsec + " second");
+                }
+            else{
+                    System.out.println();
+                }
+                System.out.println("Enter the number of seconds : ");
             second = input.nextInt();
             second = isBig(second);
         }
