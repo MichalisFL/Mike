@@ -1,0 +1,49 @@
+import java.util.Scanner; //import scanner util
+
+public class ReadSeconds {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int second;
+        int minutes;
+        int hours;
+
+        System.out.print("Enter the number of seconds : ");
+        second = input.nextInt();
+
+        second = isBig(second);
+
+        while (second != 0) {       // Checks if second is equal with 0 and terminate the program
+
+            hours = second / 3600;
+            minutes = (second % 3600) / 60;
+            int temp = (second % 3600) % 60;
+            if (temp > 1) {
+                System.out.println("The time entered in hours,minutes and seconds is:");
+                System.out.println(hours + " hours, " + minutes + " minutes, " + temp + " seconds");
+            } else {
+                System.out.println("The time entered in hours,minutes and seconds is:");
+                System.out.println(hours + " hours, " + minutes + " minutes, " + temp + " second");
+            }
+
+            System.out.print("Enter the number of seconds : ");
+            second = input.nextInt();
+            second = isBig(second);
+        }
+    }
+
+    //This function checks if the number is over 24 hours
+
+    public static int isBig(int seconds) {
+        Scanner input = new Scanner(System.in);
+        while (seconds > 86400) {
+
+            System.out.println("This value is too big!");
+            System.out.print("Enter the number of seconds : ");
+            seconds = input.nextInt();
+        }
+        return seconds;
+
+    }
+
+}
