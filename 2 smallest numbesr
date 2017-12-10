@@ -7,8 +7,13 @@ public class TwoMins {
 
         System.out.print("Enter Next Number: ");
         int first = input.nextInt();
+
+        if (first == 0){
+            return;
+        }
         System.out.print("Enter Next Number: ");
         int second = input.nextInt();
+
 
         if(second < first) {
             int temp = first;
