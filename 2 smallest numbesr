@@ -1,3 +1,9 @@
+/**
+ * Author: Michalis Georgiou
+ * Email: mgeoriou9@uclan.ac.uk
+ * TwoMinds check your numbers until you give value 0 and then print two smallest numbers.
+ */
+
 import java.util.Scanner;
 
 public class TwoMins {
@@ -13,6 +19,9 @@ public class TwoMins {
         }
         System.out.print("Enter Next Number: ");
         int second = input.nextInt();
+        if (second == 0){
+            return;
+        }
 
 
         if(second < first) {
