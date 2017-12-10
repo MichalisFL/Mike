@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
-public class Test {
+public class TwoMins {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        System.out.print("Enter Next Number: ");
         int first = input.nextInt();
+        System.out.print("Enter Next Number: ");
         int second = input.nextInt();
 
         if(second < first) {
