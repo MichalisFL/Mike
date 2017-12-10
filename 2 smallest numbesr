@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int first = input.nextInt();
+        int second = input.nextInt();
+
+        if(second < first) {
+            int temp = first;
+            first = second;
+            second = temp;
+        }
+        int num = 1;
+        while (true) {
+            System.out.print("Enter Next Number: ");
+            num = input.nextInt();
+            if (num == 0)
+                break; // 0 terminates
+            if (num < first) {
+                second = first;
+                first = num;
+            } else if (num < second) {
+                second = num;
+            }
+        }
+        System.out.println("Smallest: " + first);
+        System.out.println("Second Smallest: " + second);
+    }
+}
