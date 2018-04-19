@@ -3,20 +3,27 @@
 using namespace std;
 
 void sort(char input[], int size){
-	int i, j, temp;
+	int i, j;
 	for (i = 1; i < size; i++){
-		j = i;
-		while (j>0 && input[j - 1] > input[j]){
-			tmp = input[j - 1];
+		int tmp = input[i];
+		for (j = i; j > 0 && input[j - 1] > input[j]; j--) { // Condition
+			tmp = input[j];
 			input[j] = input[j - 1];
-			input[j - 1] = tmp;
-			j--;
 		}
+		input[j] = tmp;
+	}
+}
+
+void print_input(char input[], int size){
+
+	for (int j = 0; j < size; j++){
+		cout << size[j] << endl;
 	}
 }
 int main() {
 	cout << "Give size of array: ";
 	cin >> size[];
+
 
 
 
