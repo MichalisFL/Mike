@@ -2,29 +2,33 @@
 
 using namespace std;
 
-int main() {
-
-	char input[] = { 4, 6, 3, 7, 5, 9, 2, 8, 1, 10 };
-	sort(input, 10);
-	print_input(input, 10);
-	return 0;
-}
-
-void sort(char input[], int size){
-	int i, j;
-	for (i = 1; i < size; i++){
-		int tmp = input[i];
-		for (j = i; j > 0 && input[j - 1] > input[j]; j--) { // Condition
-			tmp = input[j];
-			input[j] = input[j - 1];
+void insertion_sort(char arr[], int length)
+{
+	int i, j, tmp;
+	for (i = 1; i < length; i++) {
+		j = i;
+		while (j > 0 && arr[j - 1] > arr[j]) {
+			tmp = arr[j];
+			arr[j] = arr[j - 1];
+			arr[j - 1] = tmp;
+			j--;
 		}
-		input[j] = tmp;
 	}
 }
 
-void print_input(char input[], int size){
-
-	for (int j = 0; j < size; j++){
-		cout << size[j] << endl;
+void print_array(char array[], int size)
+{
+	int j;
+	for (j = 0; j < size; j++)
+	{
+		cout << array[j] << endl;
 	}
+}
+
+int main()
+{
+	char array[] = { 'A', 'R', 'E' };
+	insertion_sort(array, 3);
+	print_array(array, 3);
+	return 0;
 }
