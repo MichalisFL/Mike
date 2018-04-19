@@ -2,6 +2,14 @@
 
 using namespace std;
 
+int main() {
+
+	char input[] = { 4, 6, 3, 7, 5, 9, 2, 8, 1, 10 };
+	sort(input, 10);
+	print_input(input, 10);
+	return 0;
+}
+
 void sort(char input[], int size){
 	int i, j;
 	for (i = 1; i < size; i++){
@@ -19,14 +27,4 @@ void print_input(char input[], int size){
 	for (int j = 0; j < size; j++){
 		cout << size[j] << endl;
 	}
-}
-int main() {
-	cout << "Give size of array: ";
-	cin >> size[];
-
-
-
-
-
-
 }
