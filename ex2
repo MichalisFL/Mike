@@ -27,8 +27,8 @@ void print_array(char array[], int size)
 
 int main()
 {
-	char array[] = { 'A', 'R', 'E' };
-	insertion_sort(array, 3);
-	print_array(array, 3);
+	char array[] = { 'A', 'R', 'E', '!' };
+	insertion_sort(array, 4);
+	print_array(array, 4);
 	return 0;
 }
